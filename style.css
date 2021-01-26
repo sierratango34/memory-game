@@ -1,3 +1,12 @@
-h1 {
-  color: red;
+.row {
+  text-align: center;
+}
+
+.card {
+  display: inline-block;
+  min-height: 5rem;
+  min-width: 5rem;
+  border: 1px solid black;
+  margin: 1px;
+  background-color: #92c5b780;
 }
