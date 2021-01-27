@@ -11,6 +11,9 @@
   background-color: hsl(3, 37%, 78%);
   cursor: pointer;
   box-sizing: border-box;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
 
 .card:hover {
@@ -19,6 +22,7 @@
 
 .card.done {
   cursor: default;
+  transform: rotateY(180deg);
 }
 
 .card.done:hover {
