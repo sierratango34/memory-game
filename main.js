@@ -26,8 +26,14 @@ function onCardClick(e) {
         preventClick = false;
       }, 500);
     } else {
+      combos++
       clickedCard = null;
       preventClick = false
+      if (combos === 8) {
+        setTimeout(() => {
+          alert("you win!")
+        }, 510)
+      }
     }
   }
 }
