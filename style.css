@@ -17,6 +17,16 @@
   border: 2px dotted #2C1A1D;
 }
 
+.card.done {
+  cursor: default;
+}
+
+.card.done:hover {
+  cursor: default;
+  box-shadow: none;
+  border: 1px solid #C89FA3;
+}
+
 .teal {
   background-color: teal;
 }
