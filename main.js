@@ -1,10 +1,12 @@
 let clickedCard = null;
+let preventClick = null;
+let combos = null;
 
 function onCardClick(e) {
   const target = e.currentTarget;
   color = target.getAttribute('data-color')
 
-  if (target.className.includes('done')) {
+  if (preventClick || target === clickedCard || target.className.includes('done')) {
     return;
   }
 
@@ -16,13 +18,16 @@ function onCardClick(e) {
   } else if (clickedCard) {
 
     if (clickedCard.getAttribute('data-color') !== color) {
+      preventClick = true;
       setTimeout(() => {
         clickedCard.className = clickedCard.className.replace('done', '').trim() + ' color-hidden'
         target.className = target.className.replace('done', '').trim() + ' color-hidden';
         clickedCard = null;
+        preventClick = false;
       }, 500);
     } else {
       clickedCard = null;
+      preventClick = false
     }
   }
 }
